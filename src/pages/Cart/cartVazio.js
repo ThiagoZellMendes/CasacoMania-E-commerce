@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 
-export default function Search() {
+export default function cartVazio() {
  return (
    <View style={styles.container}>
        <Text style={styles.text}>Carrinho Vazio</Text>

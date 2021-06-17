@@ -88,6 +88,7 @@ export default function LoginScreen() {
     }
  
 return (
+
    <KeyboardAvoidingView style={styles.background}>
        <View style={styles.containerlogo}> 
            <Animated.Image 
@@ -149,8 +150,9 @@ return (
            <TouchableOpacity style={styles.btnRegister} onPress={()=> navigation.navigate('Register')}>
                <Text style={styles.registerText}>Não tem conta? Crie uma AQUI.</Text>
            </TouchableOpacity>
+           
        </Animated.View>
-   </KeyboardAvoidingView>
+    </KeyboardAvoidingView>
   );
 }
 

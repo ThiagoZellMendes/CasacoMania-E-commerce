@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
 
 import  ColorMolet  from '../../component/ColorMolet'
 import SizeButton from '../../component/SizeButton'
+import { useCart } from '../../context'
+import { GlobalContext } from '../../context'
 
 
 export default function Detail2({navigation}) {
@@ -12,6 +14,14 @@ export default function Detail2({navigation}) {
       headerTitle: 'Moletom Suffix Masculino',
     }) 
 })
+
+const  { addCart }  = useCart()
+const { description } = useContext(GlobalContext)
+
+const teste = () =>{
+    addCart(description[1])
+
+}
 
   return (
     <ScrollView style={styles.container}>
@@ -65,7 +75,7 @@ export default function Detail2({navigation}) {
         </View>
 
         <View style={styles.containerB}>
-        <TouchableOpacity style={styles.btnContainer} onPress={()=>{}}>
+        <TouchableOpacity style={styles.btnContainer} onPress={() => teste()}>
             <Text style={styles.titleB}>COMPRAR</Text>
         </TouchableOpacity>
         </View>

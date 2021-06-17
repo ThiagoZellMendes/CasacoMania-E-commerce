@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext  } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
 
 import  ColorMolet  from '../../component/ColorMolet'
 import SizeButton from '../../component/SizeButton'
-
+import { useCart } from '../../context'
+import { GlobalContext } from '../../context'
 
 export default function Detail6({navigation}) {
 
@@ -12,6 +13,13 @@ export default function Detail6({navigation}) {
       headerTitle: 'Moletom Hocks Chumbo Jack',
     }) 
 })
+
+const  { addCart }  = useCart()
+const { description } = useContext(GlobalContext)
+
+const teste = () =>{
+    addCart(description[5])
+}
 
   return (
     <ScrollView style={styles.container}>
@@ -65,7 +73,7 @@ export default function Detail6({navigation}) {
         </View>
 
         <View style={styles.containerB}>
-        <TouchableOpacity style={styles.btnContainer} onPress={()=>{}}>
+        <TouchableOpacity style={styles.btnContainer} onPress={() => teste()}>
             <Text style={styles.titleB}>COMPRAR</Text>
         </TouchableOpacity>
         </View>

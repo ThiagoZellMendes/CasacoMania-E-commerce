@@ -3,6 +3,8 @@ import { View, ScrollView, StyleSheet, Text, TouchableOpacity, Alert } from 'rea
 import { CheckBox } from 'react-native-elements/dist/checkbox/CheckBox';
 import { TextInputMask } from 'react-native-masked-text'
 import firebase from 'firebase'
+import 'firebase/database'
+import 'firebase/firestore'
 
 
 export default function RegisterPage({navigation}) {
@@ -77,6 +79,11 @@ export default function RegisterPage({navigation}) {
         if (Validar(true)){
             firebase.auth().createUserWithEmailAndPassword(email, senha)
                 .then(usuario =>{
+                    firebase.firestore().collection('users').doc(usuario.user?.uid).set({
+                        cpf: cpf,
+                        nome: nome,
+                        email: email
+                })
                     Alert.alert('Cadastrado com Sucesso!');
                 })
                 .catch(erro =>{

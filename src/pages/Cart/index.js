@@ -1,8 +1,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler'
+import MoletCart from '../../component/MoletCart'
+import  { useCart }  from '../../context'
+// import { useFocusEffect } from '@react-navigation/native'
 
-export default function Cart() {
- return (
+export default function CartProduct() {
+
+const { cart } = useCart()
+
+// const { cart } = objeto;
+
+// useFocusEffect(() => {
+//     console.log(objeto)
+//     // console.log(cart)
+
+// })
+    
+    return (
     <View style={styles.container}> 
         <View style={styles.headerContainer}>
             
@@ -21,11 +36,27 @@ export default function Cart() {
                 </TouchableOpacity>
            </View>
         </View>
-    </View>
- 
-  );
-}
 
+
+        <FlatList
+        data={cart}
+        keyExtractor={(item) => item.key}
+        renderItem={({item})=> {
+          return (
+        <View> 
+
+              <MoletCart img={item.img} cost={item.price}> 
+              {item.name}
+              </MoletCart>
+            
+         </View>  
+        )
+        }}
+        />
+   </View>
+   
+);
+}
 const styles = StyleSheet.create({
 container:{
     flex: 1,
@@ -44,7 +75,7 @@ headerContainer:{
     
 },
 viewProduto:{
-     paddingLeft: 5,
+     paddingLeft: 10,
      width: '50%',
      alignSelf:'center',
      justifyContent:'center'

@@ -12,15 +12,18 @@ import Detail3 from './pages/Detail/3';
 import Detail4 from './pages/Detail/4';
 import Detail5 from './pages/Detail/5';
 import Detail6 from './pages/Detail/6';
-import Search from './pages/Testetab/Cart';
 import Notifications from './pages/Testetab/Notifications'
 import LoginScreen from './pages/LoginScreen'
 import RegisterPage from './pages/RegisterPage';
 import Perfil from './pages/Perfil'
 import EditPage from './pages/EditPage'
-import Cart from './pages/Cart';
+import cartVazio from './pages/Cart/cartVazio';
+import CartProduct from './pages/Cart';
+import GlobalProvider from './context';
+import Implement from './pages/Testetab/implement';
 
 import { Entypo, Feather} from '@expo/vector-icons'
+
 
 
 const Stack = createStackNavigator();
@@ -29,6 +32,7 @@ const Tab = createBottomTabNavigator();
 //Tab Bar
 function TabRoutes() {
     return(
+
          <Tab.Navigator 
          /* "initialRouteName" Inicia o app da Tabbar selecionada*/
          initialRouteName = "Principal"
@@ -57,8 +61,8 @@ function TabRoutes() {
              />
              
              <Tab.Screen
-              name="Carrinho" 
-              component= {Search} 
+              name="carrinho" 
+              component= {CartProduct} 
               options={{
                 tabBarIcon: ({ size, color }) => (
                     <Feather name="shopping-cart" size={size} color={color} />
@@ -88,7 +92,7 @@ function TabRoutes() {
             
              <Tab.Screen
               name="Implementação" 
-              component= {Cart} 
+              component= {Implement} 
               options={{
                 tabBarIcon: ({ size, color }) => (
                     <Feather name="settings" size={size} color={color} />
@@ -96,13 +100,15 @@ function TabRoutes() {
             }}
               />
          
-         </Tab.Navigator>      
+         </Tab.Navigator>
+
     ) 
  }
  
 //Navigação Principal
 function Routes(){
     return(
+      <GlobalProvider>
         <NavigationContainer>
             <Stack.Navigator>
                 
@@ -204,8 +210,17 @@ function Routes(){
                         {headerTintColor: '#4B0082'}
                     }
                 />
+                <Stack.Screen
+                //Inclusão do TabNavigation
+                    name="cartvazio"
+                    component={cartVazio}
+                    options={
+                        {headerShown: false}
+                    } 
+                />
             </Stack.Navigator>
         </NavigationContainer>
+      </GlobalProvider>
     )
 }
 

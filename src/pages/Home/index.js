@@ -16,7 +16,7 @@ export default function Home() {
 
         <View style={styles.textcontainer}>
           <Text style={styles.text}>MOLETONS</Text>
-          <Text style={[ styles.text, { color: '#9370DB'} ]}>•</Text>
+          <Text style={[ styles.text, { color: '#9370DB'},{paddingLeft: 10, paddingRight:10} ]}>•</Text>
           <Text style={[ styles.text, { color: '#9370DB'} ]}>CASACO MANIA</Text>
           <TouchableOpacity style={{ position: 'absolute', right: 0, alignSelf: 'center',paddingTop:5}}>
             <MaterialIcons
@@ -30,15 +30,15 @@ export default function Home() {
 
       <View style={ styles.line} />
         
-        <Text style={ styles.text}>LANÇAMENTOS</Text>
-  
-  <ScrollView horizontal={true}>
+        <Text style={ [styles.text, { paddingLeft:10}]}>LANÇAMENTOS</Text>
+ 
+  <ScrollView horizontal={true} style={styles.scrollContainer}>
     
     <ProdutosList />  
   
   </ScrollView>
     
-    </View>
+  </View>
  )
  }
 
@@ -68,5 +68,13 @@ const styles = StyleSheet.create({
   line:{
     borderBottomColor: '#D8d8d8',
     borderBottomWidth: 2,
-  }
+  },
+  scrollContainer:{
+      flex: 1,
+      width: '100%',
+      backgroundColor: '#FFF',
+      paddingLeft:20,
+      paddingTop:5
+      
+},
 });
