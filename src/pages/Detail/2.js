@@ -5,6 +5,7 @@ import  ColorMolet  from '../../component/ColorMolet'
 import SizeButton from '../../component/SizeButton'
 import { useCart } from '../../context'
 import { GlobalContext } from '../../context'
+import Footer from '../../component/Footer'
 
 
 export default function Detail2({navigation}) {
@@ -79,6 +80,10 @@ const teste = () =>{
             <Text style={styles.titleB}>COMPRAR</Text>
         </TouchableOpacity>
         </View>
+
+        <View style={ styles.line} />
+
+        <Footer />
       
       
       </View> 
@@ -138,5 +143,10 @@ const styles = StyleSheet.create({
   titleB:{
     fontSize: 17,
     color: '#FFF'
-  }
+  },
+  line:{
+    borderBottomColor: '#DDD',
+    borderBottomWidth: 2,
+    marginVertical: '2%'
+  },
 })

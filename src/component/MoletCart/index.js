@@ -1,8 +1,13 @@
 import React from 'react';
 import { View,Text, TouchableOpacity, Image, StyleSheet,} from 'react-native';
+import { useCart } from '../../context'
 
 export default function MoletCart(props) {
+
  
+const { remove } = useCart()
+
+
 function filterDesc(desc){
      if(desc.length < 20){
          return desc;
@@ -28,7 +33,7 @@ return (
     </View>
             
     <View style={styles.viewLimpar}>
-            <TouchableOpacity style={styles.touchRemover} onPress={()=>{}}>
+            <TouchableOpacity style={styles.touchRemover} onPress={() => remove(props.item.key)}>
                 <Text style={styles.textR}>REMOVER</Text>
             </TouchableOpacity>
     </View>

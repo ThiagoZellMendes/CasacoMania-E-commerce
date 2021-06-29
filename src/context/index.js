@@ -9,6 +9,7 @@ const description= [
     detalhe: 'Detail1',
     name: 'Moleton Nicoboco Jack',
     price: 'R$ 280,90'
+
   },
   {
     key: '2',
@@ -56,36 +57,41 @@ export default function GlobalProvider({children}) {
   const [totalValue, setTotalValue] = useState();
     
   useEffect(() => {
-      let value = 0
-      cart.map((item) =>{
-        value = value + item.price
-      })
+       let value = 0
+       cart.map((item) =>{
+         value = value + item.price
+       })
 
-      setTotalValue(value)
+       setTotalValue(value)
     
-    }, [cart])
+     }, [cart])
     
   
     
    function addCart(item) {
       const newCart = cart
-      newCart.push(item)
-      
-      console.log(cart)
+      newCart.push(item)      
       
       setCart(newCart)
     }
+
+    function remove (index) {
+      let newCart = cart.filter((item) => item.key !== key);
+      setCart(newCart)
+    }
+      
  
     const store = {
         addCart, 
         cart,
-        totalValue
+        totalValue,
+        remove
     }
  
  
  
   return (
-   <GlobalContext.Provider value={{store, description}}>
+   <GlobalContext.Provider value={{store, description,cart}}>
        {children}
    </GlobalContext.Provider>
   );
@@ -99,6 +105,7 @@ export default function GlobalProvider({children}) {
         cart,
         addCart,
         totalValue,
+        remove
         
     } = context.store
 
@@ -106,6 +113,7 @@ export default function GlobalProvider({children}) {
        cart,
        addCart,
        totalValue,
+       remove,
        description: context.description
     }
 

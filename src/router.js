@@ -1,28 +1,28 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { View, Text} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { GlobalContext } from './context'
 
-
-import Home from './pages/Home'
-import Detail from './pages/Detail/1'
+import Home from './pages/Home';
+import Detail from './pages/Detail/1';
 import Detail2 from './pages/Detail/2';
 import Detail3 from './pages/Detail/3';
 import Detail4 from './pages/Detail/4';
 import Detail5 from './pages/Detail/5';
 import Detail6 from './pages/Detail/6';
-import Notifications from './pages/Testetab/Notifications'
+import Notifications from './pages/Testetab/Notifications';
 import LoginScreen from './pages/LoginScreen'
 import RegisterPage from './pages/RegisterPage';
-import Perfil from './pages/Perfil'
-import EditPage from './pages/EditPage'
-import cartVazio from './pages/Cart/cartVazio';
+import Perfil from './pages/Perfil';
+import EditPage from './pages/EditPage';
+import Implement from './pages/Testetab/Implement';
 import CartProduct from './pages/Cart';
 import GlobalProvider from './context';
-import Implement from './pages/Testetab/implement';
+import { useIsFocused } from '@react-navigation/native';
 
-import { Entypo, Feather} from '@expo/vector-icons'
+import { Entypo, Feather} from '@expo/vector-icons';
 
 
 
@@ -31,8 +31,14 @@ const Tab = createBottomTabNavigator();
 
 //Tab Bar
 function TabRoutes() {
-    return(
+  const isFocused = useIsFocused()
+  
+  isFocused ? 'focused' : 'unfocused'
+  
+  const { cart } = useContext(GlobalContext)    
 
+  return(
+      
          <Tab.Navigator 
          /* "initialRouteName" Inicia o app da Tabbar selecionada*/
          initialRouteName = "Principal"
@@ -60,13 +66,15 @@ function TabRoutes() {
              }}
              />
              
-             <Tab.Screen
+             <Tab.Screen 
               name="carrinho" 
               component= {CartProduct} 
-              options={{
+              options={
+                {
                 tabBarIcon: ({ size, color }) => (
                     <Feather name="shopping-cart" size={size} color={color} />
-                )
+                ),
+                tabBarBadge:cart.length
             }}
               />
             
@@ -147,7 +155,6 @@ function Routes(){
                         {headerTintColor:'#4B0082'}
                     }
                 />
-
                 <Stack.Screen
                 //Navegaçao a aba de detalhe dos produtos.
                     name='Detail1'
@@ -210,19 +217,10 @@ function Routes(){
                         {headerTintColor: '#4B0082'}
                     }
                 />
-                <Stack.Screen
-                //Inclusão do TabNavigation
-                    name="cartvazio"
-                    component={cartVazio}
-                    options={
-                        {headerShown: false}
-                    } 
-                />
             </Stack.Navigator>
         </NavigationContainer>
       </GlobalProvider>
     )
 }
-
 
 export default Routes;
