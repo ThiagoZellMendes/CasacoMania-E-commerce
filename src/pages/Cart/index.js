@@ -8,8 +8,10 @@ import { useIsFocused } from '@react-navigation/native';
 export default function CartProduct() {
       
        //chama o carro da Apicontext
-  const { cart } = useContext(GlobalContext)
+  const { cart, totalValue} = useContext(GlobalContext)
 //-------------------------------------------//
+
+  const total = totalValue
  
 //tras o carrinho para o foco sempre que chamado, assim atualizando o estado dele
   const isFocused = useIsFocused()
@@ -17,7 +19,7 @@ export default function CartProduct() {
   isFocused ? 'focused' : 'unfocused'
  
 //-------------------------------------------//
-  console.log(cart)
+  console.log(totalValue)
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -27,13 +29,13 @@ export default function CartProduct() {
         </View>
 
         <View style={styles.viewValor}>
-          <Text style={styles.textLimpar}>Qtd: {cart.length} </Text>
-          <Text style={styles.textLimpar}>Valor: $0.00</Text>
+          <Text style={styles.text}>Qtd: {cart.length} </Text>
+          <Text style={styles.text}>Valor: R$ {total.toFixed(2).replace("." , ",")} </Text>
         </View>
 
-        <View style={styles.viewLimpar}>
-          <TouchableOpacity style={styles.touchLimpar} onPress={() => { }}>
-            <Text style={styles.textLimpar}>CONCLUIR</Text>
+        <View style={styles.viewPagamento}>
+          <TouchableOpacity style={styles.touchPagamento} onPress={() => { }}>
+            <Text style={styles.text}>{'\r'}{'\r'}{'\r'}{'\r'}Ir para {'\n'} pagamento</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -41,11 +43,11 @@ export default function CartProduct() {
 
       <FlatList
         data={cart}
-        renderItem={({index, item }) => {
+        renderItem={({ index, item }) => {
           return (
             <View >
 
-              <MoletCart img={item.img} cost={item.price}>
+              <MoletCart index={index} img={item.img} cost={item.price.toFixed(2).replace("." , ",")}>
                 {item.name}
               </MoletCart>
 
@@ -77,36 +79,36 @@ const styles = StyleSheet.create({
   },
   viewProduto: {
     paddingLeft: 20,
-    width: '50%',
+    width: '45%',
     alignSelf: 'center',
     justifyContent: 'center'
 
   },
   viewValor: {
-    width: '25%',
+    width: '30%',
     height: '100%',
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
 
   },
-  viewLimpar: {
+  viewPagamento: {
     width: '30%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  touchLimpar: {
+  touchPagamento: {
     backgroundColor: '#4B0082',
     fontSize: 18,
     color: '#FFF',
-    height: '33%',
-    width: '70%',
+    height: '50%',
+    width: '75%',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
   },
-  textLimpar: {
+  text: {
     color: '#fff',
     fontWeight: 'bold',
   },

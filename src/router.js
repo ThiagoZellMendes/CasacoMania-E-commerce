@@ -74,7 +74,10 @@ function TabRoutes() {
                 tabBarIcon: ({ size, color }) => (
                     <Feather name="shopping-cart" size={size} color={color} />
                 ),
-                tabBarBadge:cart.length
+                tabBarBadge:cart.length,
+                tabBarBadgeStyle: {
+                  backgroundColor: '#9400d3', color: '#FFF', fontSize: 15, fontWeight: 'bold'
+                }
             }}
               />
             

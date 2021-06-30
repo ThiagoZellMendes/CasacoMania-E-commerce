@@ -5,7 +5,7 @@ import { useCart } from '../../context'
 export default function MoletCart(props) {
 
  
-const { remove } = useCart()
+const { remove, cart } = useCart()
 
 
 function filterDesc(desc){
@@ -29,11 +29,11 @@ return (
         
     <View style={styles.viewValor}>
             <Text style={styles.textRemover}>{filterDesc(props.children)}</Text>
-            <Text style={styles.textRemover}>{props.cost}</Text>
+            <Text style={styles.textRemover}>R$ {props.cost}</Text>
     </View>
             
     <View style={styles.viewLimpar}>
-            <TouchableOpacity style={styles.touchRemover} onPress={() => remove(props.item.key)}>
+            <TouchableOpacity style={styles.touchRemover} onPress={() => remove(props.index)}>
                 <Text style={styles.textR}>REMOVER</Text>
             </TouchableOpacity>
     </View>

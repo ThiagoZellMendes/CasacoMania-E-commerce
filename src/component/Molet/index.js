@@ -21,7 +21,7 @@ return (
            {filterDesc(props.children)}
        </Text>
        <View opacity={0.4}>
-        <Text style={styles.MoletText}> {props.cost} </Text>
+        <Text style={styles.MoletText}>R$ {props.cost} </Text>
        </View>
     </TouchableOpacity>
   );

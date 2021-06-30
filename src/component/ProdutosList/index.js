@@ -19,7 +19,7 @@ export default function ProdutosList1() {
           return (
         <View>    
             
-              <Molet img={item.img} cost={item.price} onClick={() => {navigation.navigate(item.detalhe)}}>
+              <Molet img={item.img} cost={item.price.toFixed(2).replace("." , ",")} onClick={() => {navigation.navigate(item.detalhe)}}>
                {item.name} 
               </Molet>
             
