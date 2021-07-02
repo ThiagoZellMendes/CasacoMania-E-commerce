@@ -2,12 +2,15 @@ import React, {useEffect, useState} from 'react';
 import { View, ScrollView, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 import { CheckBox } from 'react-native-elements/dist/checkbox/CheckBox';
 import { TextInputMask } from 'react-native-masked-text'
+import { useNavigation } from '@react-navigation/core';
 import firebase from 'firebase'
 import 'firebase/database'
 import 'firebase/firestore'
 
 
 export default function RegisterPage({navigation}) {
+
+  const nav = useNavigation();
 
     useEffect(() => { 
         navigation.setOptions({
@@ -79,12 +82,13 @@ export default function RegisterPage({navigation}) {
         if (Validar(true)){
             firebase.auth().createUserWithEmailAndPassword(email, senha)
                 .then(usuario =>{
-                    firebase.firestore().collection('users').doc(usuario.user?.uid).set({
+                    firebase.firestore().collection('Users').doc(usuario.user?.uid).set({
                         cpf: cpf,
                         nome: nome,
                         email: email
                 })
                     Alert.alert('Cadastrado com Sucesso!');
+                    nav.navigate('Login')
                 })
                 .catch(erro =>{
                     Alert.alert('Erro ao cadastrar Usuário');

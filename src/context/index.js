@@ -54,7 +54,7 @@ export default function GlobalProvider({children}) {
   
   let value = 0
   const [cart, setCart] = useState([]);
-  const [totalValue, setTotalValue] = useState();
+  const [totalValue, setTotalValue] = useState(0);
     
   // useEffect(() => {
   //      let value = 0
@@ -84,7 +84,7 @@ export default function GlobalProvider({children}) {
       let newCart = cart.filter((item, i) => i !== index);
       setCart(newCart)
       cart.map((item) =>{
-      value - item.price
+      value = totalValue - item.price
       })
       setTotalValue(value)
     }

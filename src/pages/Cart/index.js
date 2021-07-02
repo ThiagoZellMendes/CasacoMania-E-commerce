@@ -6,20 +6,18 @@ import { GlobalContext } from '../../context'
 import { useIsFocused } from '@react-navigation/native';
 
 export default function CartProduct() {
-      
-       //chama o carro da Apicontext
+//chama o carro da Apicontext
   const { cart, totalValue} = useContext(GlobalContext)
-//-------------------------------------------//
-
   const total = totalValue
+
+//-------------------------------------------//
  
 //tras o carrinho para o foco sempre que chamado, assim atualizando o estado dele
-  const isFocused = useIsFocused()
-  
+  const isFocused = useIsFocused() 
   isFocused ? 'focused' : 'unfocused'
+  
+ //-------------------------------------------//
  
-//-------------------------------------------//
-  console.log(totalValue)
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -30,7 +28,7 @@ export default function CartProduct() {
 
         <View style={styles.viewValor}>
           <Text style={styles.text}>Qtd: {cart.length} </Text>
-          <Text style={styles.text}>Valor: R$ {total.toFixed(2).replace("." , ",")} </Text>
+          <Text style={styles.text}>Valor: R$ {total.toFixed(2).replace("." , ",")}</Text>
         </View>
 
         <View style={styles.viewPagamento}>
