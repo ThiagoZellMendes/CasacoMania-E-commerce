@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-
 import ColorMolet from '../../component/ColorMolet'
+import { HeaderBackButton } from '@react-navigation/stack';
 import SizeButton from '../../component/SizeButton'
 import { useCart } from '../../context'
 import { GlobalContext } from '../../context'
@@ -10,13 +10,17 @@ import 'firebase/database'
 import 'firebase/firestore'
 
 
+
 export default function Detail({ navigation }) {
 
-  useEffect(() => {
+  useEffect(() => { 
     navigation.setOptions({
-      headerTitle: 'Moleton Nicoboco Jack',
-    })
-  })
+      headerTitle: 'Moletom Suffix Masculino',
+      headerLeft: () => (
+        <HeaderBackButton tintColor='#4B0082' onPress={()=>navigation.navigate('Principal')} />
+      ),
+    }) 
+})
 
   const { addCart } = useCart()
   const { description } = useContext(GlobalContext)
@@ -33,7 +37,9 @@ export default function Detail({ navigation }) {
   // }
 
   return (
-    <ScrollView style={styles.container}>
+ 
+   <ScrollView style={styles.container}>
+     
       <Image
         source={require('../../assets/detail1.png')}
         style={styles.Image}
@@ -85,7 +91,7 @@ export default function Detail({ navigation }) {
 
         <View style={styles.containerB}>
           <TouchableOpacity style={styles.btnContainer} onPress={() => addCart(description[0])}>
-            <Text style={styles.titleB}>COMPRAR</Text>
+            <Text style={styles.titleB}>ADICIONAR AO CARRINHO</Text>
           </TouchableOpacity>
         </View>
 
@@ -93,8 +99,9 @@ export default function Detail({ navigation }) {
 
         <Footer />
 
-      </View>
-    </ScrollView>
+        </View>
+      </ScrollView>
+   
   );
 }
 

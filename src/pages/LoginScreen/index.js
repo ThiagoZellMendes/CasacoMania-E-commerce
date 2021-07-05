@@ -24,7 +24,7 @@ export default function LoginScreen() {
     //função para acessar
     const Acessar= () =>{
         firebase.auth().signInWithEmailAndPassword(email, senha)
-            .then(usuario => navigation.navigate('PerfilUser'))
+            .then(usuario => navigation.navigate('Principal'))
             .catch(erro => Alert.alert('Email ou senha Incorreto'))
         
     }

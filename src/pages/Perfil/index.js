@@ -9,7 +9,7 @@ export default function Perfil() {
  
 const navigation = useNavigation();
 //const name = 'Thiago Mendes'
-const role = 'GERENTE'
+const role = 'Bem vindo'
  
  return (
     <View>
@@ -17,7 +17,7 @@ const role = 'GERENTE'
         placement="right"
         backgroundColor='#4B0082'
         centerComponent={{text: 'Logout', style:{ color: '#fff'}, fontSize: 19 }} 
-        rightComponent={<TouchableOpacity onPress={()=> navigation.navigate('Login')}>
+        rightComponent={<TouchableOpacity onPress={()=> navigation.navigate('Main')}>
                           <Icon name="logout" color="#fff"/> 
                         </TouchableOpacity>}>
       </Header>
@@ -31,8 +31,8 @@ const role = 'GERENTE'
           size='large'
         />
         <ListItem.Content>
+          <ListItem.Subtitle style={{color:'#fff'}}>{role}.</ListItem.Subtitle>
           <ListItem.Title style={{color:'#fff'}}>{firebase.auth().currentUser?.displayName}</ListItem.Title>
-          <ListItem.Subtitle style={{color:'#fff'}}>{role}</ListItem.Subtitle>
           </ListItem.Content>
         </ListItem>
 
@@ -48,7 +48,7 @@ const role = 'GERENTE'
   />
 
   <ListItem.Content>
-    <ListItem.Title style={{color:'#fff'}}>ZellLianon@gmail.com</ListItem.Title>
+    <ListItem.Title style={{color:'#fff'}}>{firebase.auth().currentUser?.email}</ListItem.Title>
     <ListItem.Subtitle style={{color:'#fff'}}>E-mail</ListItem.Subtitle>
   </ListItem.Content>
 </ListItem>

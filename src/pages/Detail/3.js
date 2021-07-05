@@ -1,6 +1,6 @@
 import React, { useEffect, useContext  } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-
+import { HeaderBackButton } from '@react-navigation/stack';
 import  ColorMolet  from '../../component/ColorMolet'
 import SizeButton from '../../component/SizeButton'
 import { useCart } from '../../context'
@@ -11,7 +11,10 @@ export default function Detail3({navigation}) {
 
   useEffect(() => { 
     navigation.setOptions({
-      headerTitle: 'Moletons Liso Flanelado',
+      headerTitle: 'Moletom Suffix Masculino',
+      headerLeft: () => (
+        <HeaderBackButton tintColor='#4B0082' onPress={()=>navigation.navigate('Principal')} />
+      ),
     }) 
 })
 
@@ -75,7 +78,7 @@ const teste = () =>{
 
         <View style={styles.containerB}>
         <TouchableOpacity style={styles.btnContainer} onPress={() => teste()}>
-            <Text style={styles.titleB}>COMPRAR</Text>
+            <Text style={styles.titleB}>ADICIONAR AO CARRINHO</Text>
         </TouchableOpacity>
         </View>
 

@@ -54,7 +54,7 @@ export default function GlobalProvider({children}) {
   
   let value = 0
   const [cart, setCart] = useState([]);
-  const [totalValue, setTotalValue] = useState(0);
+  const [totalValue, setTotalValue] = useState(value);
     
   // useEffect(() => {
   //      let value = 0

@@ -4,9 +4,7 @@ import { CheckBox } from 'react-native-elements/dist/checkbox/CheckBox';
 import { TextInputMask } from 'react-native-masked-text'
 import { useNavigation } from '@react-navigation/core';
 import firebase from 'firebase'
-import 'firebase/database'
 import 'firebase/firestore'
-
 
 export default function RegisterPage({navigation}) {
 
@@ -88,7 +86,7 @@ export default function RegisterPage({navigation}) {
                         email: email
                 })
                     Alert.alert('Cadastrado com Sucesso!');
-                    nav.navigate('Login')
+                    nav.navigate('Main')
                 })
                 .catch(erro =>{
                     Alert.alert('Erro ao cadastrar Usuário');

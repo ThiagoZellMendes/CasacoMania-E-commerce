@@ -1,38 +1,34 @@
 import React, {useContext} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { View, Text} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { GlobalContext } from './context'
 
-import Home from './pages/Home';
-import Detail from './pages/Detail/1';
-import Detail2 from './pages/Detail/2';
-import Detail3 from './pages/Detail/3';
-import Detail4 from './pages/Detail/4';
-import Detail5 from './pages/Detail/5';
-import Detail6 from './pages/Detail/6';
-import Notifications from './pages/Testetab/Notifications';
-import LoginScreen from './pages/LoginScreen'
-import RegisterPage from './pages/RegisterPage';
-import Perfil from './pages/Perfil';
-import EditPage from './pages/EditPage';
-import Implement from './pages/Testetab/Implement';
-import CartProduct from './pages/Cart';
-import GlobalProvider from './context';
+
+
+import Home from '../src/pages/Home';
+import Detail from '../src/pages/Detail/1';
+import Detail2 from '../src/pages/Detail/2';
+import Detail3 from '../src/pages/Detail/3';
+import Detail4 from '../src/pages/Detail/4';
+import Detail5 from '../src/pages/Detail/5';
+import Detail6 from '../src/pages/Detail/6';
+import Notifications from '../src/pages/Testetab/Notifications';
+import LoginScreen from '../src/pages/LoginScreen'
+import RegisterPage from '../src/pages/RegisterPage/usuario';
+import Perfil from '../src/pages/Perfil';
+import EditPage from '../src/pages/EditPage';
+import CartProduct from '../src/pages/Cart';
+import { GlobalContext } from './../src/context'
 import { useIsFocused } from '@react-navigation/native';
+import GlobalProvider from './../src/context';
 
 import { Entypo, Feather} from '@expo/vector-icons';
 
-
-
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 //Tab Bar
 function TabRoutes() {
   const isFocused = useIsFocused()
-  
   isFocused ? 'focused' : 'unfocused'
   
   const { cart } = useContext(GlobalContext)    
@@ -43,6 +39,7 @@ function TabRoutes() {
          /* "initialRouteName" Inicia o app da Tabbar selecionada*/
          initialRouteName = "Principal"
          tabBarOptions={{
+        
              style:{
                 backgroundColor: '#4B0082',
                 bonderTopColor: 'transparent'
@@ -57,8 +54,8 @@ function TabRoutes() {
             >
              
              <Tab.Screen 
-             name="Login" 
-             component= {LoginScreen} 
+             name="Perfil" 
+             component= {Perfil} 
              options={{
                  tabBarIcon: ({ size, color }) => (
                      <Feather name="user" size={size} color={color} />
@@ -101,7 +98,7 @@ function TabRoutes() {
             }}
              />
             
-             <Tab.Screen
+             {/* <Tab.Screen
               name="Implementação" 
               component= {Implement} 
               options={{
@@ -109,7 +106,7 @@ function TabRoutes() {
                     <Feather name="settings" size={size} color={color} />
                 )
             }}
-              />
+              /> */}
          
          </Tab.Navigator>
 
@@ -125,7 +122,18 @@ function Routes(){
                 
                 <Stack.Screen
                 //Inclusão do TabNavigation
-                    name={"Main"} component={TabRoutes}
+                    
+                    name={"Main"} 
+                    component={LoginScreen}
+                    options={
+                        {headerShown: false}
+                    } 
+                />
+                <Stack.Screen
+                //Inclusão do TabNavigation
+                    
+                    name={"Principal"} 
+                    component={TabRoutes}
                     options={
                         {headerShown: false}
                     } 
@@ -140,7 +148,7 @@ function Routes(){
                     }
                 />
 
-                <Stack.Screen
+                {/* <Stack.Screen
                 //Navegaçao para o perfil de Usuario.
                     name="PerfilUser"
                     component={Perfil}
@@ -148,7 +156,7 @@ function Routes(){
                         headerShown:false,
                         
                     }}
-                />
+                /> */}
 
                 <Stack.Screen
                 //Navegaçao para o perfil de Usuario.
@@ -166,11 +174,8 @@ function Routes(){
                         {headerTitle:'Jack'},
                         {headerTintColor: '#4B0082'}
                     }
+
                 />
-           
-
-                
-
                 <Stack.Screen
                 //Navegaçao a aba de detalhe dos produtos.
                     name="Detail2"
@@ -178,7 +183,7 @@ function Routes(){
                     options={
                         {headerTitle:'Jack'},
                         {headerTintColor: '#4B0082'}
-                    }
+                    }    
                 />
 
                <Stack.Screen
@@ -224,6 +229,7 @@ function Routes(){
         </NavigationContainer>
       </GlobalProvider>
     )
+  
 }
 
 export default Routes;
