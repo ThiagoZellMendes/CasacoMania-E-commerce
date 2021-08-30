@@ -24,14 +24,22 @@
 
 ## 💻 Sobre o projeto
 
-:tshirt: CasacoMania é um Ecomemerce desenvolvido em ReactNative, para meios de aprendizado das tecnologias nele usadas.
+:tshirt: CasacoMania é um E-commerce desenvolvido em ReactNative, para meios de aprendizagem das tecnologias nele usadas.
 
 Nele o usuario podera cadastrar seu acesso, e comprar casacos, o app vai do cadastro do cliente a venda dos produtos:
 
-- Cadastro do Cliente com autenticação atrave do Firebase;
-- escolha do casaco e adição dos mesmos no Carrinho de comprar;
-- possibilidade de retirada dos itens do carrinho;
-- escolha da forma de pagamento e geração do boleto ou confimação de compra(em construção)
+- Cadastro do Cliente com autenticação atraves do Firebase;
+- Escolha dos casacos e adição dos mesmos no Carrinho de compras;
+- Possibilidade de retirada dos itens do carrinho;
+
+To-do-List:
+
+- Correção de Bugs no ContextApi(Carrinho de compras);
+- Correção na adição de itens repetidos no carrinho;
+- Tela de pagamento e escolhas de formas de pagamentos;
+- Integração com formas de pagamentos(como PagSeguro por exemplo)
+- Implementar outras formas de autenticação(google, Facebook)
+
 
 Projeto desenvolvido para prova final da faculdade, mas que foi bem além disso :smile:
 
@@ -64,7 +72,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 O projeto foi criando em Expo ou seja precisaremos do mesmo instalado:
 
 
-💡é Preciso um emulador para executar o app, no meu caso usei "AndroidStudio", mas pode ser usando outros:
+💡é Preciso um emulador para executar o app, no meu caso usei "AndroidStudio", mas pode ser usando outros meios:
 
 ### Pré-requisitos
 
