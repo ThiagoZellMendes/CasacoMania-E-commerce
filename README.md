@@ -38,10 +38,15 @@ Projeto desenvolvido para prova final da faculdade, mas que foi bem além disso 
 
 ## 🎨 Layout
 
+<p align="center">
+  <img alt="MobileApp" title="#MobileApp" src="./assets/FistScreen.jpeg" width="200px">
 
-
-
-### Mobile
+  <img alt="MobileApp" title="#MobileApp" src="./assets/TelaCasacos.jpeg" width="200px">
+	
+  <img alt="MobileApp" title="#MobileApp" src="./assets/Details.jpeg" width="200px">
+  
+  <img alt="MobileApp" title="#MobileApp" src="./assets/Profile2.jpeg" width="200px">
+</p>
 
 
 ## 🛠 Tecnologias
@@ -84,7 +89,7 @@ $ npm start
 
 # Aplicativi foi otimizado para Android:
 $ Escolha "a" para abrir ele para Android
- 
+``` 
 
 
 ## 😯 Como contribuir para o projeto
@@ -107,6 +112,7 @@ Feito com Muito Carinho por Thiago Mendes 👋🏽 [Entre em contato!](https://w
 [rn]: https://facebook.github.io/react-native/
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
+[JavaScript]:https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
 [license]: https://opensource.org/licenses/MIT
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
