@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="CasacoMania" title="#CasacoMania" src="./src/assets/banner.png" />
+    <img alt="CasacoMania" title="#CasacoMania" src="./src/assets/logo.png" width="300px" height="300px"/>
 </h1>
 
 <h4 align="center"> 
