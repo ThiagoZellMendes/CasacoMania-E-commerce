@@ -24,7 +24,7 @@
 
 ## 💻 Sobre o projeto
 
-:tshirt: CasacoMania é um E-commerce desenvolvido em ReactNative, para meios de aprendizagem das tecnologias nele usadas.
+:tshirt: CasacoMania é um E-commerce desenvolvido em ReactNative, para fins de aprendizagem das tecnologias nele usadas.
 
 Nele o usuario podera cadastrar seu acesso, e comprar casacos, o app vai do cadastro do cliente a venda dos produtos:
 
