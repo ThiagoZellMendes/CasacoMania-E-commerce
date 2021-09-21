@@ -7,17 +7,17 @@
 </h4>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/ThiagoZellMendes/AppReactNative?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/ThiagoZellMendes/CasacoManiaApp.E-commerce?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ThiagoZellMendes/AppReactNative">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ThiagoZellMendes/CasacoManiaApp.E-commerce">
 
-  <a href="https://github.com/ThiagoZellMendes/AppReactNative/commits/AppFacul">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ThiagoZellMendes/AppReactNative">
+  <a href="https://github.com/ThiagoZellMendes/CasacoManiaApp.E-commerce/commits/AppFacul">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ThiagoZellMendes/CasacoManiaApp.E-commerce">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/ThiagoZellMendes/AppReactNative/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/ThiagoZellMendes/AppReactNative?style=social">
+   <a href="https://github.com/ThiagoZellMendes/CasacoManiaApp.E-commerce/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/ThiagoZellMendes/CasacoManiaApp.E-commerce?style=social">
   </a>
 </p>
 
