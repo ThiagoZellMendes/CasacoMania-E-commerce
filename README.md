@@ -95,7 +95,7 @@ $ npm install
 # Execute a aplicação:
 $ npm start
 
-# Aplicativi foi otimizado para Android:
+# Aplicativo foi otimizado para Android:
 $ Escolha "a" para abrir ele para Android
 ``` 
 
