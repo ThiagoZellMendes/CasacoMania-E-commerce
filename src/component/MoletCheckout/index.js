@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, } from 'react-native';
 import { useCart } from '../../context'
 
-export default function MoletCart(props) {
+export default function MoletCheckout(props) {
 
 
   const { remove, cart } = useCart()
@@ -33,9 +33,7 @@ export default function MoletCart(props) {
         </View>
 
         <View style={styles.viewLimpar}>
-          <TouchableOpacity style={styles.touchRemover} onPress={() => remove(props.index)}>
-            <Text style={styles.textR}>REMOVER</Text>
-          </TouchableOpacity>
+            <Text style={styles.textR}>X1</Text>
         </View>
       </View>
 
@@ -93,7 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   textR: {
-    color: '#FFF',
+    color: '#4B0082',
     fontWeight: 'bold',
   },
   touchRemover: {

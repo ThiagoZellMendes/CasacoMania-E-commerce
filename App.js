@@ -9,7 +9,9 @@ import Routes from './routes/auth.router'
 import firebase from 'firebase';
 import { firebaseConfig } from './src/config/firebase';
 
-firebase.initializeApp(firebaseConfig)
+if(!firebase.apps.length){
+  firebase.initializeApp(firebaseConfig)
+}
 
 
 export default function App() {

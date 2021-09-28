@@ -6,15 +6,16 @@ import { AdMobBanner } from 'expo-ads-admob';
 
 export default function Notifications() {
  return (
+   
    <View style={styles.container}>
-            
-        <AdMobBanner
+       <AdMobBanner
         adUnitID= "ca-app-pub-3940256099942544/6300978111" 
         bannerSize= 'leaderboard'
+        style={styles.adMobbanner}
         />
 
        <Text style={styles.text}> Sem Notificações</Text>
-       <Ionicons name= "notifications-off-outline" color= "#fff" size={50} />
+       <Ionicons name= "notifications-off-outline" color= "#2db4ed" size={50} />
    </View>
   );
 }
@@ -23,12 +24,15 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor:'#4B0082',
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     text:{
         fontSize: 25,
         fontWeight: 'bold',
-        color: '#fff'
+        color: '#fff',
+        paddingTop: "60%"
+    },
+    adMobbanner:{
+      paddingTop: "20%"
     }
 })

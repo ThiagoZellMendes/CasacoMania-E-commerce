@@ -3,18 +3,17 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler'
 import MoletCart from '../../component/MoletCart'
 import { GlobalContext } from '../../context'
-import { useIsFocused } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/core'
 
 export default function CartProduct() {
 //chama o carro da Apicontext
   const { cart, totalValue} = useContext(GlobalContext)
-  const total = totalValue
-
+  const navigation = useNavigation();
 //-------------------------------------------//
  
 //tras o carrinho para o foco sempre que chamado, assim atualizando o estado dele
-  const isFocused = useIsFocused() 
-  isFocused ? 'focused' : 'unfocused'
+  // const isFocused = useIsFocused() 
+  // isFocused ? 'focused' : 'unfocused'
   
  //-------------------------------------------//
  
@@ -27,12 +26,12 @@ export default function CartProduct() {
         </View>
 
         <View style={styles.viewValor}>
-          <Text style={styles.text}>Qtd: {cart.length} </Text>
-          <Text style={styles.text}>Valor: R$ {total.toFixed(2).replace("." , ",")}</Text>
+          <Text style={styles.text}>Quantidade: {cart.length} </Text>
+          <Text style={styles.text}>Valor: R$ {totalValue.toFixed(2).replace("." , ",")}</Text>
         </View>
 
         <View style={styles.viewPagamento}>
-          <TouchableOpacity style={styles.touchPagamento} onPress={() => { }}>
+          <TouchableOpacity style={styles.touchPagamento} onPress={() => navigation.navigate('Checkout')}>
             <Text style={styles.text}>{'\r'}{'\r'}{'\r'}{'\r'}Ir para {'\n'} pagamento</Text>
           </TouchableOpacity>
         </View>
@@ -44,15 +43,16 @@ export default function CartProduct() {
         renderItem={({ index, item }) => {
           return (
             <View >
-
+              <View style={styles.line} />
               <MoletCart index={index} img={item.img} cost={item.price.toFixed(2).replace("." , ",")}>
                 {item.name}
               </MoletCart>
-
+              <View style={styles.line} />
             </View>
           )
         }}
         keyExtractor={(item) => item.key.toString()}
+        
       />
     </View>
 
@@ -62,24 +62,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    backgroundColor: '#4B0082',
-    paddingTop: 60
+    backgroundColor: '#FFF',
+    paddingTop: 60,
   },
   headerContainer: {
     flexDirection: 'row',
-    backgroundColor: '#9370DB',
+    backgroundColor: '#4B0082',
     height: '15%',
     width: "100%",
     alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 5
+    justifyContent: 'space-between',
+    marginBottom: 1
 
   },
   viewProduto: {
-    paddingLeft: 20,
-    width: '45%',
+    paddingLeft: 10,
+    width: '30%',
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+  
 
   },
   viewValor: {
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   touchPagamento: {
-    backgroundColor: '#4B0082',
+    backgroundColor: '#2db4ed',
     fontSize: 18,
     color: '#FFF',
     height: '50%',
@@ -114,5 +115,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 20
-  }
+  },
+  line: {
+    borderBottomColor: '#8a9497',
+    borderBottomWidth: 1,
+  },
 })

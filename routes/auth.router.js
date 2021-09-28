@@ -18,6 +18,7 @@ import RegisterPage from '../src/pages/RegisterPage/usuario';
 import Perfil from '../src/pages/Perfil';
 import EditPage from '../src/pages/EditPage';
 import CartProduct from '../src/pages/Cart';
+import Checkout from '../src/pages/Cart/checkout';
 import { GlobalContext } from './../src/context'
 import { useIsFocused } from '@react-navigation/native';
 import GlobalProvider from './../src/context';
@@ -148,15 +149,16 @@ function Routes(){
                     }
                 />
 
-                {/* <Stack.Screen
+                <Stack.Screen
                 //Navegaçao para o perfil de Usuario.
-                    name="PerfilUser"
-                    component={Perfil}
+                    name="Checkout"
+                    component={Checkout}
                     options={{
-                        headerShown:false,
+                        headerTintColor:'#4B0082',
+                        headerTitle:'Finalizar comprar'
                         
                     }}
-                /> */}
+                />
 
                 <Stack.Screen
                 //Navegaçao para o perfil de Usuario.

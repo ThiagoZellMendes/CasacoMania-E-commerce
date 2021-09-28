@@ -16,9 +16,9 @@ const role = 'Bem vindo'
       <Header 
         placement="right"
         backgroundColor='#4B0082'
-        centerComponent={{text: 'Logout', style:{ color: '#fff'}, fontSize: 19 }} 
+        centerComponent={{text: 'Logout', style:{ color: '#fff', fontSize: 15, fontWeight: 'bold' }}} 
         rightComponent={<TouchableOpacity onPress={()=> navigation.navigate('Main')}>
-                          <Icon name="logout" color="#fff"/> 
+                          <Icon name="logout" color="#2db4ed"/> 
                         </TouchableOpacity>}>
       </Header>
      
@@ -42,7 +42,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'mail', color: 'orange', type: 'Icon'}}
+    icon={{name: 'mail', color: '#2db4ed', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />
@@ -59,7 +59,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'verified', color: 'orange', type: 'Icon'}}
+    icon={{name: 'verified', color: '#2db4ed', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />
@@ -78,7 +78,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'assignment', color: 'orange', type: 'Icon'}}
+    icon={{name: 'assignment', color: '#2db4ed', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />
@@ -96,7 +96,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'settings', color: 'orange', type: 'Icon'}}
+    icon={{name: 'settings', color: '#2db4ed', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />

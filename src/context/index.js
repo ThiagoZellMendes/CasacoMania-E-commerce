@@ -52,41 +52,31 @@ const description= [
 
 export default function GlobalProvider({children}) {
   
-  let value = 0
   const [cart, setCart] = useState([]);
-  const [totalValue, setTotalValue] = useState(value);
-    
-  // useEffect(() => {
-  //      let value = 0
-  //      cart.map((item) =>{
-  //        value = value + item.price
-  //      })
+  const [totalValue, setTotalValue] = useState();
 
-  //      setTotalValue(value)
+  useEffect(() => {
+    let value = 0;
+    cart.map((item) => {
+      value =  value + item.price; 
+    })
+    setTotalValue(value);
     
-  //    }, [cart])
+  },[cart])
     
-  
-    
+
    function addCart(item) {
       const newCart = cart
       newCart.push(item)      
-      setCart(newCart)
-      cart.map((item) =>{
-        value = value + item.price
-      })
-
-      setTotalValue(value)
-      
+      setCart([...newCart])
+    
     }
 
     function remove (index) {
-      let newCart = cart.filter((item, i) => i !== index);
-      setCart(newCart)
-      cart.map((item) =>{
-      value = totalValue - item.price
-      })
-      setTotalValue(value)
+//se o index do item for diferente do que agente que remover, retorna o array completo,
+//se for igual, remove o item selevionado     
+    let newCart = cart.filter((item, i) => i !== index);
+      setCart([...newCart])
     }
 
  

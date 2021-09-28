@@ -15,10 +15,7 @@ export default function RegisterPage({ navigation }) {
   })
 
   const db = firebase.firestore().collection('Users')
-  // const  dados =  db.doc(firebase.auth().currentUser.uid).get().then( doc =>  {
-  //   const  resposta  = doc.data()
-  //   console.log(resposta)
-  // })
+  
   const  dados = db.doc(firebase.auth().currentUser.uid).get().then(() => 'cep')
   
   console.log(dados)
@@ -26,12 +23,18 @@ export default function RegisterPage({ navigation }) {
   // console.log(dados)
   const [nome, setNome] = useState(firebase.auth().currentUser?.displayName);
   const [email, setEmail] = useState(firebase.auth().currentUser?.email);
-  const [cep, setCep] = useState()
-  const [endereco, setEndereco] = useState();
-  const [numero, setNumero] = useState();
-  const [cidade, setCidade] = useState();
+  const [cep, setCep] = useState('57014000')
+  const [endereco, setEndereco] = useState('Rua Formosa - Ponta Grossa');
+  const [numero, setNumero] = useState('2177');
+  const [cidade, setCidade] = useState('Maceió/AL');
   const [senha, setSenha] = useState('123456');
   const [rsenha, setrSenha] = useState('123456');
+
+  // const  dados =  db.doc(firebase.auth().currentUser.uid).get().then( doc =>  {
+  //   const  resposta  = doc.data()
+  //    console.log(resposta)
+  //    setCep(resposta.cep)
+  //  })
   //___________________________________________//
 
   //validação dos campos do formulario.
@@ -212,7 +215,7 @@ export default function RegisterPage({ navigation }) {
           <TextInputMask
             style={styles.inputText}
             label="Numero"
-            placeholder="Digite Rua/Avenida - bairro"
+            placeholder="Digite o numero da residencia"
             placeholderTextColor="#9370DB"
             type={'custom'}
             options={{ mask: '********************************************' }}
