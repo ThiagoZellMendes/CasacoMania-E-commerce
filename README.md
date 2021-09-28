@@ -34,7 +34,7 @@ Nele o usuario podera cadastrar seu acesso, e comprar casacos, o app vai do cada
 
 To-do-List:
 
-- Correção de Bugs no ContextApi(Carrinho de compras);
+- ~~Correção de Bugs no ContextApi(Carrinho de compras)~~ **FIXED**;
 - Correção na adição de itens repetidos no carrinho;
 - Tela de pagamento e escolhas de formas de pagamentos;
 - Integração com formas de pagamentos(como PagSeguro por exemplo)
