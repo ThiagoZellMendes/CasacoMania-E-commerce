@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     flexDirection: 'row',
-    marginBottom: 5
+    marginVertical: 3,
   },
   errorMessage: {
     justifyContent: 'center',
@@ -341,9 +341,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   btnSubmit: {
-    backgroundColor: '#9370DB',
-    marginTop: 30,
-    width: '90%',
+    backgroundColor: '#28cc9e',
+    marginVertical: 10,
+    width: '93%',
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
@@ -357,7 +357,7 @@ const styles = StyleSheet.create({
   },
   viewMask: {
     flexDirection: 'row',
-    width: '98%',
+    width: '93%',
     marginBottom: 3,
     backgroundColor: '#FFF',
     color: '#4B0082',
@@ -368,7 +368,7 @@ const styles = StyleSheet.create({
   },
   viewMaskno: {
     flexDirection: 'row',
-    width: '98%',
+    width: '93%',
     marginBottom: 3,
     backgroundColor: '#C0C0C0',
     color: '#4B0082',

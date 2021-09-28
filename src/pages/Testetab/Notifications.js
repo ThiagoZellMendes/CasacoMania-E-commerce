@@ -15,7 +15,7 @@ export default function Notifications() {
         />
 
        <Text style={styles.text}> Sem Notificações</Text>
-       <Ionicons name= "notifications-off-outline" color= "#2db4ed" size={50} />
+       <Ionicons name= "notifications-off-outline" color= "#28cc9e" size={50} />
    </View>
   );
 }

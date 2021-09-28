@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
        alignItems: 'center', 
     },
     btnSubmit:{
-       backgroundColor: '#9370DB',
+       backgroundColor: '#28cc9e',
        width: '90%',
        height: 45,
        alignItems: 'center',
@@ -212,6 +212,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     registerText:{
-      color: '#FFF'  
+      color: '#28cc9e'  
     }
 });

@@ -74,7 +74,7 @@ function TabRoutes() {
                 ),
                 tabBarBadge:cart.length,
                 tabBarBadgeStyle: {
-                  backgroundColor: '#9400d3', color: '#FFF', fontSize: 15, fontWeight: 'bold'
+                  backgroundColor: '#28cc9e', color: '#FFF', fontSize: 15, fontWeight: 'bold'
                 }
             }}
               />

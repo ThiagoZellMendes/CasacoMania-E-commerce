@@ -9,6 +9,8 @@ export default function CartProduct() {
 //chama o carro da Apicontext
   const { cart, totalValue} = useContext(GlobalContext)
   const navigation = useNavigation();
+
+   let valorformat = totalValue
 //-------------------------------------------//
  
 //tras o carrinho para o foco sempre que chamado, assim atualizando o estado dele
@@ -27,7 +29,7 @@ export default function CartProduct() {
 
         <View style={styles.viewValor}>
           <Text style={styles.text}>Quantidade: {cart.length} </Text>
-          <Text style={styles.text}>Valor: R$ {totalValue.toFixed(2).replace("." , ",")}</Text>
+          <Text style={styles.text}>Valor: {valorformat.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})}</Text>
         </View>
 
         <View style={styles.viewPagamento}>
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   touchPagamento: {
-    backgroundColor: '#2db4ed',
+    backgroundColor: '#28cc9e',
     fontSize: 18,
     color: '#FFF',
     height: '50%',

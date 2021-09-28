@@ -18,7 +18,7 @@ const role = 'Bem vindo'
         backgroundColor='#4B0082'
         centerComponent={{text: 'Logout', style:{ color: '#fff', fontSize: 15, fontWeight: 'bold' }}} 
         rightComponent={<TouchableOpacity onPress={()=> navigation.navigate('Main')}>
-                          <Icon name="logout" color="#2db4ed"/> 
+                          <Icon name="logout" color="#28cc9e"/> 
                         </TouchableOpacity>}>
       </Header>
      
@@ -31,7 +31,7 @@ const role = 'Bem vindo'
           size='large'
         />
         <ListItem.Content>
-          <ListItem.Subtitle style={{color:'#fff'}}>{role}.</ListItem.Subtitle>
+          <ListItem.Subtitle style={{color:'#28cc9e'}}>{role}.</ListItem.Subtitle>
           <ListItem.Title style={{color:'#fff'}}>{firebase.auth().currentUser?.displayName}</ListItem.Title>
           </ListItem.Content>
         </ListItem>
@@ -42,7 +42,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'mail', color: '#2db4ed', type: 'Icon'}}
+    icon={{name: 'mail', color: '#28cc9e', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />
@@ -59,7 +59,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'verified', color: '#2db4ed', type: 'Icon'}}
+    icon={{name: 'verified', color: '#28cc9e', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />
@@ -78,7 +78,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'assignment', color: '#2db4ed', type: 'Icon'}}
+    icon={{name: 'assignment', color: '#28cc9e', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />
@@ -96,7 +96,7 @@ const role = 'Bem vindo'
     
     <Avatar
     size="large"
-    icon={{name: 'settings', color: '#2db4ed', type: 'Icon'}}
+    icon={{name: 'settings', color: '#28cc9e', type: 'Icon'}}
     overlayContainerStyle={{backgroundColor: '#4B0082'}}
     containerStyle={{width:"20%"}}
   />

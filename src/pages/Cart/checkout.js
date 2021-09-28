@@ -46,7 +46,7 @@ export default function Checkout() {
 
           <Avatar
             size="large"
-            icon={{ name: 'payment', color: '#2db4ed', type: 'Icon' }}
+            icon={{ name: 'payment', color: '#28cc9e', type: 'Icon' }}
             overlayContainerStyle={{ backgroundColor: '#4B0082' }}
             containerStyle={{ width: "20%" }}
           />
@@ -61,7 +61,7 @@ export default function Checkout() {
 
           <Avatar
             size="large"
-            icon={{ name: 'article', color: '#2db4ed', type: 'Icon' }}
+            icon={{ name: 'article', color: '#28cc9e', type: 'Icon' }}
             overlayContainerStyle={{ backgroundColor: '#4B0082' }}
             containerStyle={{ width: "20%" }}
           />
@@ -78,7 +78,7 @@ export default function Checkout() {
 
           <Avatar
             size="large"
-            icon={{ name: 'assessment', color: '#2db4ed', type: 'Icon' }}
+            icon={{ name: 'assessment', color: '#28cc9e', type: 'Icon' }}
             overlayContainerStyle={{ backgroundColor: '#4B0082' }}
             containerStyle={{ width: "20%" }}
           />

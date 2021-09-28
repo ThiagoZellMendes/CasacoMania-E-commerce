@@ -34,7 +34,7 @@ export default function MoletCart(props) {
 
         <View style={styles.viewLimpar}>
           <TouchableOpacity style={styles.touchRemover} onPress={() => remove(props.index)}>
-            <Text style={styles.textR}>REMOVER</Text>
+            <Text style={styles.textR}>Remover</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   touchRemover: {
-    backgroundColor: '#9370DB',
+    backgroundColor: '#28cc9e',
     color: '#FFF',
     height: '33%',
     width: '80%',
