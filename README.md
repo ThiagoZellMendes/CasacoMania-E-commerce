@@ -37,8 +37,9 @@ To-do-List:
 - ~~Correção de Bugs no ContextApi(Carrinho de compras)~~ **FIXED**;
 - Correção na adição de itens repetidos no carrinho;
 - Tela de pagamento e escolhas de formas de pagamentos;
-- Integração com formas de pagamentos(como PagSeguro por exemplo)
-- Implementar outras formas de autenticação(google, Facebook)
+- Integração com formas de pagamentos(como PagSeguro por exemplo);
+- Implementar outras formas de autenticação(google, Facebook);
+- Refatorar codigo para TypeScript.
 
 
 Projeto desenvolvido para prova final da faculdade, mas que foi bem além disso :smile:
