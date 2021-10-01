@@ -36,6 +36,7 @@ To-do-List:
 
 - ~~Correção de Bugs no ContextApi(Carrinho de compras)~~ **FIXED**;
 - Correção na adição de itens repetidos no carrinho;
+- Melhora no retorno de mensagem de erros para o usuario;
 - Tela de pagamento e escolhas de formas de pagamentos;
 - Integração com formas de pagamentos(como PagSeguro por exemplo);
 - Implementar outras formas de autenticação(google, Facebook);
