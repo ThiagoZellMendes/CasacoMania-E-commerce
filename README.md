@@ -38,10 +38,12 @@ To-do-List:
 - Correção na adição de itens repetidos no carrinho;
 - Melhora no retorno de mensagens de erros para o usuário;
 - adicionar loguin por redes sociais;
+- Implementar logica dos icones dos detalhes de produtos;
 - Tela de pagamento e escolhas de formas de pagamentos;
 - Integração com formas de pagamentos(como PagSeguro por exemplo);
 - Implementar outras formas de autenticação(google, Facebook);
 - Refatorar codigo para TypeScript.
+
 
 
 Projeto desenvolvido para prova final da faculdade, mas que foi bem além disso :smile:
