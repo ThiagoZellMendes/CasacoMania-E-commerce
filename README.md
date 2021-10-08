@@ -26,27 +26,25 @@
 
 :tshirt: CasacoMania é um E-commerce desenvolvido em ReactNative, para fins de aprendizagem das tecnologias nele usadas.
 
-Nele o usuario podera cadastrar seu acesso, e comprar casacos, o app vai do cadastro do cliente a venda dos produtos:
+Nele o usuário poderá cadastrar seu acesso, e comprar casacos, o app vai do cadastro do cliente a venda dos produtos:
 
-- Cadastro do Cliente com autenticação atraves do Firebase;
-- Escolha dos casacos e adição dos mesmos no Carrinho de compras;
-- Possibilidade de retirada dos itens do carrinho;
+ - Cadastro do Cliente com autenticação através do Firebase;
+ - Escolha dos casacos e adição dos mesmos no Carrinho de compras;
+ - Possibilidade de retirada dos itens do carrinho;
 
 To-do-List:
+ 
+ - ~~Correção de Bugs no ContextApi(Carrinho de compras)~~ FIXED;
+ - Correção na adição de itens repetidos no carrinho;
+ - Melhora no retorno de mensagens de erros para o usuário;
+ - Adicionar loguin por redes sociais;
+ - Implementar logica dos ícones dos detalhes de produtos;
+ - Tela de pagamento e escolhas de formas de pagamentos;
+ - Integração com formas de pagamentos(como PagSeguro por exemplo);
+ - Implementar outras formas de autenticação(google, Facebook);
+ - Refatorar código para TypeScript.
 
-- ~~Correção de Bugs no ContextApi(Carrinho de compras)~~ **FIXED**;
-- Correção na adição de itens repetidos no carrinho;
-- Melhora no retorno de mensagens de erros para o usuário;
-- adicionar loguin por redes sociais;
-- Implementar logica dos icones dos detalhes de produtos;
-- Tela de pagamento e escolhas de formas de pagamentos;
-- Integração com formas de pagamentos(como PagSeguro por exemplo);
-- Implementar outras formas de autenticação(google, Facebook);
-- Refatorar codigo para TypeScript.
-
-
-
-Projeto desenvolvido para prova final da faculdade, mas que foi bem além disso :smile:
+Projeto desenvolvido para prova final da faculdade, mas que foi bem, além disso 😄
 
 
 ## 🎨 Layout
